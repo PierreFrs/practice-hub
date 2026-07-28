@@ -1,0 +1,20 @@
+/* Reset CSS basique pour enlever les marges par défaut du navigateur */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  /* On s'assure que le fond global est de la couleur souhaitée */
+  background-color: #fafafa; 
+  /* Pour éviter les barres de défilement horizontales accidentelles */
+  overflow-x: hidden; 
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
