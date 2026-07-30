@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ROOTS, SCALES, RHYTHMS } from '../config/MusicDataSource';
+import { ROOTS, SCALES, RHYTHMS } from '../config/RhythmTreeDataSource';
 import type { RhythmConfig, WorkoutState } from '../config/Types';
 
 export function useWorkoutGenerator() {

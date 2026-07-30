@@ -8,17 +8,9 @@ export const WORKOUTS: WorkoutModule[] = [
     icon: '🎸'
   },
   {
-    id: 'fretboard-mapping',
-    title: 'Fretboard Mapping',
-    description: 'Bientôt disponible. Travaillez vos intervalles et triades sur tout le manche.',
-    icon: '🗺️',
-    disabled: true
-  },
-  {
-    id: 'speed-picking',
-    title: 'Alternate Picking',
-    description: 'Bientôt disponible. Exercices de précision et de vitesse au médiator.',
-    icon: '⚡',
-    disabled: true
+    id: 'chord-progressions',
+    title: 'Style Progressions',
+    description: 'Génère des progressions d\'accords (en degrés) dans une tonalité aléatoire selon ton style préféré.',
+    icon: '🎹'
   }
 ];
