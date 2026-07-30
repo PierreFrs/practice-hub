@@ -4,7 +4,7 @@ export const WORKOUTS: WorkoutModule[] = [
   {
     id: 'rhythm-tree',
     title: 'Rhythm Tree Improv',
-    description: 'Workout d\'improvisation sur 36 mesures avec contraintes rythmiques et harmoniques aléatoires.',
+    description: 'Workout d\'improvisation sur 32 mesures avec contraintes rythmiques et harmoniques aléatoires.',
     icon: '🎸'
   },
   {

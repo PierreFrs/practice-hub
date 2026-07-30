@@ -1,0 +1,191 @@
+.workout-page-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.workout-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.workout-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.workout-title {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  color: #111827;
+}
+
+.workout-description {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.generate-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s;
+}
+
+.generate-button:hover {
+  background-color: #4338ca;
+}
+
+.workout-main {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.summary-section {
+  background-color: #f3f4f6;
+  padding: 1.5rem 0;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+}
+
+.summary-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: #111827;
+}
+
+.style-badge {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progression-text {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+.progression-highlight {
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.phrase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  justify-content: center;
+}
+
+.phrase-card {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.measure-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f3f4f6;
+  padding: 4px 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rhythm-display-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.rhythm-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.rhythm-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.rhythm-notation {
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.rhythm-name {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.rhythm-separator {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.repeat-indicator {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
