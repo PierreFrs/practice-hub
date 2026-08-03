@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../config/supabaseClient';
-import { ROOTS, type KeyQuality } from '../config/musicConstants';
+import { supabase } from '../config/SupabaseClient';
+import { ROOTS, type KeyQuality } from '../config/MusicConstants';
 
 export interface ChordWorkoutState {
   root: string;

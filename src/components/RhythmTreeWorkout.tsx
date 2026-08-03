@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useRhythmTreeWorkoutGenerator } from '../hooks/useRhythmTreeWorkoutGenerator';
+import { useRhythmTreeWorkoutGenerator } from '../hooks/UseRhythmTreeWorkoutGenerator';
 import './RhythmTreeWorkout.css';
 
 export default function RhythmTreeWorkout() {

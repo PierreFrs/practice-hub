@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useAdminData } from '../hooks/useAdminData';
+import { useAdminData } from '../hooks/UseAdminData';
 import StylesSection from './admin/StylesSection';
 import ProgressionsSection from './admin/ProgressionsSection';
 import './AdminDashboard.css';

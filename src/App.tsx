@@ -1,7 +1,7 @@
-import AdminDashboard from './components/adminDashboard';
-import ChordProgressionsWorkout from './components/chordProgressionsWorkout';
-import LandingPage from './components/landingPage';
-import RhythmTreeWorkout from './components/rhythmTreeWorkout';
+import AdminDashboard from './components/AdminDashboard';
+import ChordProgressionsWorkout from './components/ChordProgressionsWorkout';
+import LandingPage from './components/LandingPage';
+import RhythmTreeWorkout from './components/RhythmTreeWorkout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {

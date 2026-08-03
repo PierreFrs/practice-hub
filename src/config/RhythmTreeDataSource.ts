@@ -1,4 +1,4 @@
-import type { RhythmConfig, ScaleConfig } from './types';
+import type { RhythmConfig, ScaleConfig } from './Types';
 
 export const RHYTHMS: RhythmConfig[] = [
   { name: 'Blanches', notation: '𝅗𝅥' },

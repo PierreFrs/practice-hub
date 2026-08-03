@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { SCALES, RHYTHMS } from '../config/rhythmTreeDataSource';
-import type { RhythmConfig, WorkoutState } from '../config/types';
-import { ROOTS } from '../config/musicConstants';
+import type { RhythmConfig, WorkoutState } from '../config/Types';
+import { ROOTS } from '../config/MusicConstants';
 
 export function useRhythmTreeWorkoutGenerator() {
   const [workout, setWorkout] = useState<WorkoutState | null>(null);

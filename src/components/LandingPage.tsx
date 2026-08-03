@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { WORKOUTS } from "../config/workoutCatalogue";
-import WorkoutCard from "./workoutCard";
+import { WORKOUTS } from "../config/WorkoutCatalogue";
+import WorkoutCard from "./WorkoutCard";
 import './LandingPage.css';
 
 export default function LandingPage() {

@@ -1,4 +1,4 @@
-import type { WorkoutModule } from '../config/types';
+import type { WorkoutModule } from '../config/Types';
 import './WorkoutCard.css'; // Import the CSS
 
 interface Props {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { StyleRow } from '../../hooks/useAdminData';
+import type { StyleRow } from '../../hooks/UseAdminData';
 
 interface Props {
   styles: StyleRow[];

@@ -1,4 +1,4 @@
-import type { WorkoutModule } from './types.ts';
+import type { WorkoutModule } from './Types.ts';
 
 export const WORKOUTS: WorkoutModule[] = [
   {

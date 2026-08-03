@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useChordWorkoutGenerator } from '../hooks/useChordWorkoutGenerator';
+import { useChordWorkoutGenerator } from '../hooks/UseChordWorkoutGenerator';
 import './ChordProgressionsWorkout.css';
 
 export default function ChordProgressionsWorkout() {

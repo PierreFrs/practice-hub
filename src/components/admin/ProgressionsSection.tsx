@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import type { StyleRow, ProgressionRow } from '../../hooks/useAdminData';
-import { KEY_QUALITIES, type KeyQuality } from '../../config/musicConstants';
+import type { StyleRow, ProgressionRow } from '../../hooks/UseAdminData';
+import { KEY_QUALITIES, type KeyQuality } from '../../config/MusicConstants';
 
 interface Props {
   styles: StyleRow[];
