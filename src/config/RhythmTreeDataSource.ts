@@ -1,7 +1,5 @@
 import type { RhythmConfig, ScaleConfig } from './types';
 
-export const ROOTS: string[] = ['A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#'];
-
 export const RHYTHMS: RhythmConfig[] = [
   { name: 'Blanches', notation: '𝅗𝅥' },
   { name: 'Noires', notation: '♩' },

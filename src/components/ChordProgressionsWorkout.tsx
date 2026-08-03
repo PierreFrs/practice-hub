@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { useChordWorkoutGenerator } from '../hooks/chordProgressionsWorkoutGenerator';
-import { STYLES } from '../config/chordProgressionsDataSource';
+import { useChordWorkoutGenerator } from '../hooks/useChordWorkoutGenerator';
 import './ChordProgressionsWorkout.css';
 
 export default function ChordProgressionsWorkout() {
   const navigate = useNavigate();
-  const { workout, activeStyle, generateWorkout } = useChordWorkoutGenerator();
+  const { workout, activeStyle, generateWorkout, dbStyles, loading, errorMsg } = useChordWorkoutGenerator();
 
   return (
     <div className="workout-page-container">
@@ -23,17 +22,22 @@ export default function ChordProgressionsWorkout() {
             Choisis un style pour générer une progression d'accords dans une tonalité aléatoire.
           </p>
           
-          <div className="style-selector">
-            {STYLES.map(style => (
-              <button
-                key={style}
-                onClick={() => generateWorkout(style)}
-                className={`style-button ${activeStyle === style ? 'active' : ''}`}
-              >
-                {style}
-              </button>
-            ))}
-          </div>
+          {loading && <p style={{ color: '#6b7280', marginTop: '1rem' }}>Chargement des styles...</p>}
+          {errorMsg && <p style={{ color: '#ef4444', marginTop: '1rem' }}>Erreur : {errorMsg}</p>}
+
+          {!loading && !errorMsg && (
+            <div className="style-selector">
+              {dbStyles.map(style => (
+                <button
+                  key={style.id}
+                  onClick={() => generateWorkout(style.id, style.name)}
+                  className={`style-button ${activeStyle === style.id ? 'active' : ''}`}
+                >
+                  {style.name}
+                </button>
+              ))}
+            </div>
+          )}
         </header>
 
         {workout ? (

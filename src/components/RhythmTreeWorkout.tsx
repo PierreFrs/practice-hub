@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { useWorkoutGenerator } from '../hooks/rhythmTreeWorkoutGenerator';
+import { useRhythmTreeWorkoutGenerator } from '../hooks/useRhythmTreeWorkoutGenerator';
 import './RhythmTreeWorkout.css';
 
 export default function RhythmTreeWorkout() {
   const navigate = useNavigate();
-  const { workout, generateWorkout } = useWorkoutGenerator();
+  const { workout, generateWorkout } = useRhythmTreeWorkoutGenerator();
 
   return (
     <div className="workout-page-container">

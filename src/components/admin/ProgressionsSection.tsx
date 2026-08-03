@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { StyleRow, ProgressionRow } from '../../hooks/useAdminData';
-
-const QUALITY_OPTIONS = ['Majeur', 'Mineur', 'Dorian', 'Mixolydien', 'Blues'];
+import { KEY_QUALITIES, type KeyQuality } from '../../config/musicConstants';
 
 interface Props {
   styles: StyleRow[];
@@ -13,7 +12,7 @@ interface Props {
 export default function ProgressionsSection({ styles, progressions, onAdd, onDelete }: Props) {
   const [progChords, setProgChords] = useState('');
   const [progReference, setProgReference] = useState('');
-  const [progQuality, setProgQuality] = useState(QUALITY_OPTIONS[0]);
+  const [progQuality, setProgQuality] = useState<KeyQuality>(KEY_QUALITIES[0]);
   const [progStyleId, setProgStyleId] = useState('');
 
   // Sélectionner le premier style par défaut quand ils sont chargés
@@ -60,8 +59,8 @@ export default function ProgressionsSection({ styles, progressions, onAdd, onDel
           onChange={(e) => setProgReference(e.target.value)}
           required
         />
-        <select value={progQuality} onChange={(e) => setProgQuality(e.target.value)}>
-          {QUALITY_OPTIONS.map(q => <option key={q} value={q}>{q}</option>)}
+        <select value={progQuality} onChange={(e) => setProgQuality(e.target.value as KeyQuality )}>
+          {KEY_QUALITIES.map(q => <option key={q} value={q}>{q}</option>)}
         </select>
         <button type="submit" className="btn-add">+ Ajouter Progression</button>
       </form>
