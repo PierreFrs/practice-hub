@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useChordWorkoutGenerator } from '../hooks/ChordProgressionsWorkoutGenerator';
-import { STYLES } from '../config/ChordProgressionsDataSource';
+import { useChordWorkoutGenerator } from '../hooks/chordProgressionsWorkoutGenerator';
+import { STYLES } from '../config/chordProgressionsDataSource';
 import './ChordProgressionsWorkout.css';
 
 export default function ChordProgressionsWorkout() {

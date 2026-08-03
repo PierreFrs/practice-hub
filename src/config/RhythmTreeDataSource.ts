@@ -1,4 +1,4 @@
-import type { RhythmConfig, ScaleConfig } from './Types';
+import type { RhythmConfig, ScaleConfig } from './types';
 
 export const ROOTS: string[] = ['A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#'];
 

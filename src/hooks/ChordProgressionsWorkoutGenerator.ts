@@ -4,7 +4,7 @@ import {
   PROGRESSIONS_BY_STYLE, 
   type StyleName, 
   type ChordProgressionDef 
-} from '../config/ChordProgressionsDataSource';
+} from '../config/chordProgressionsDataSource';
 
 export interface ChordWorkoutState extends ChordProgressionDef {
   root: string;
