@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SCALES, RHYTHMS } from '../config/rhythmTreeDataSource';
+import { SCALES, RHYTHMS } from '../config/RhythmTreeDataSource';
 import type { RhythmConfig, WorkoutState } from '../config/Types';
 import { ROOTS } from '../config/MusicConstants';
 
