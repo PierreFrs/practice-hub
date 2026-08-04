@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { StyleRow, ProgressionRow } from '../../hooks/UseAdminData';
 import { KEY_QUALITIES, type KeyQuality } from '../../config/MusicConstants';
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function ProgressionsSection({ styles, progressions, onAdd, onDelete }: Props) {
+  const { t } = useTranslation();
   const [progChords, setProgChords] = useState('');
   const [progReference, setProgReference] = useState('');
   const [progQuality, setProgQuality] = useState<KeyQuality>(KEY_QUALITIES[0]);
@@ -39,22 +41,23 @@ export default function ProgressionsSection({ styles, progressions, onAdd, onDel
 
   return (
     <section className="admin-card">
-      <h2>Progressions ({progressions.length})</h2>
+      {/* On utilise une variable dans la traduction pour afficher le nombre */}
+      <h2>{t('admin.progressions.title', { count: progressions.length })}</h2>
       <form onSubmit={handleSubmit} className="admin-form vertical">
         <select value={progStyleId} onChange={(e) => setProgStyleId(e.target.value)} required>
-          <option value="" disabled>-- Choisir un Style --</option>
+          <option value="" disabled>{t('admin.progressions.choose_style')}</option>
           {styles.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
         </select>
         <input 
           type="text" 
-          placeholder="Accords (ex: ii7 - V7 - Imaj7)" 
+          placeholder={t('admin.progressions.chords_placeholder')} 
           value={progChords}
           onChange={(e) => setProgChords(e.target.value)}
           required
         />
         <input 
           type="text" 
-          placeholder="Référence (ex: Autumn Leaves)" 
+          placeholder={t('admin.progressions.ref_placeholder')} 
           value={progReference}
           onChange={(e) => setProgReference(e.target.value)}
           required
@@ -62,20 +65,20 @@ export default function ProgressionsSection({ styles, progressions, onAdd, onDel
         <select value={progQuality} onChange={(e) => setProgQuality(e.target.value as KeyQuality )}>
           {KEY_QUALITIES.map(q => <option key={q} value={q}>{q}</option>)}
         </select>
-        <button type="submit" className="btn-add">+ Ajouter Progression</button>
+        <button type="submit" className="btn-add">{t('admin.progressions.add_btn')}</button>
       </form>
       <ul className="data-list progressions-list">
         {progressions.map(prog => (
           <li key={prog.id} className="data-item flex-col">
             <div className="prog-header">
-              <span className="badge">{prog.styles?.name || 'Inconnu'}</span>
+              <span className="badge">{prog.styles?.name || t('admin.progressions.unknown_style')}</span>
               <button onClick={() => onDelete(prog.id)} className="btn-delete">❌</button>
             </div>
             <strong className="prog-chords">{prog.chords}</strong>
             <span className="prog-ref">{prog.reference} • {prog.key_quality}</span>
           </li>
         ))}
-        {progressions.length === 0 && <li className="empty-text">Aucune progression trouvée.</li>}
+        {progressions.length === 0 && <li className="empty-text">{t('admin.progressions.empty')}</li>}
       </ul>
     </section>
   );

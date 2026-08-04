@@ -34,7 +34,22 @@ export default {
       "back_link": "← Retour au site",
       "title": "🛠️ Back Office",
       "subtitle": "Gère les données de ton application Supabase en direct.",
-      "loading": "Chargement des données..."
+      "loading": "Chargement des données...",
+      "styles": {
+        "title": "Styles ({{count}})",
+        "placeholder": "Nouveau style (ex: Bossa Nova)",
+        "add_btn": "+ Ajouter",
+        "empty": "Aucun style trouvé."
+      },
+      "progressions": {
+        "title": "Progressions ({{count}})",
+        "choose_style": "-- Choisir un Style --",
+        "chords_placeholder": "Accords (ex: ii7 - V7 - Imaj7)",
+        "ref_placeholder": "Référence (ex: Autumn Leaves)",
+        "add_btn": "+ Ajouter Progression",
+        "unknown_style": "Inconnu",
+        "empty": "Aucune progression trouvée."
+      }
     }
   }
 };
