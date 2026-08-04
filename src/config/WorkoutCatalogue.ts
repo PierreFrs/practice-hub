@@ -3,14 +3,14 @@ import type { WorkoutModule } from './Types.ts';
 export const WORKOUTS: WorkoutModule[] = [
   {
     id: 'rhythm-tree',
-    title: 'Rhythm Tree Improv',
-    description: 'Workout d\'improvisation sur 32 mesures avec contraintes rythmiques et harmoniques aléatoires.',
+    title: 'workouts.rhythm_tree.title',
+    description: 'workouts.rhythm_tree.description',
     icon: '🎸'
   },
   {
     id: 'chord-progressions',
-    title: 'Style Progressions',
-    description: 'Génère des progressions d\'accords (en degrés) dans une tonalité aléatoire selon ton style préféré.',
+    title: 'workouts.chord_progressions.title',
+    description: 'workouts.chord_progressions.description',
     icon: '🎹'
   }
 ];

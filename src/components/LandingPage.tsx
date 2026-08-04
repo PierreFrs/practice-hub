@@ -1,19 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { WORKOUTS } from "../config/WorkoutCatalogue";
 import WorkoutCard from "./WorkoutCard";
 import './LandingPage.css';
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  // Initialisation du hook de traduction
+  const { t } = useTranslation();
 
   return (
     <div className="landing-container">
       
       <header className="landing-header">
-        <h1 className="landing-title">Practice Hub</h1>
+        {/* Remplacement des textes en dur par les clés de traduction */}
+        <h1 className="landing-title">{t('landing.title')}</h1>
         <p className="landing-description">
-          Choisissez votre module d'entraînement. Développez votre vocabulaire musical, 
-          votre technique et votre sens du rythme.
+          {t('landing.subtitle')}
         </p>
       </header>
 

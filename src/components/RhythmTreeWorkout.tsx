@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useRhythmTreeWorkoutGenerator } from '../hooks/UseRhythmTreeWorkoutGenerator';
 import './RhythmTreeWorkout.css';
 
 export default function RhythmTreeWorkout() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { workout, generateWorkout } = useRhythmTreeWorkoutGenerator();
 
   return (
@@ -13,20 +15,20 @@ export default function RhythmTreeWorkout() {
           onClick={() => navigate('/')}
           className="back-button"
         >
-          ← Retour aux exercices
+          {t('rhythm_tree.back_button')}
         </button>
 
         <header className="workout-header">
-          <h1 className="workout-title">🎸 Rhythm Tree</h1>
+          <h1 className="workout-title">{t('rhythm_tree.title')}</h1>
           <p className="workout-description">
-            Génère un workout d'improvisation sous contrainte rythmique (32 mesures).
+            {t('rhythm_tree.description')}
           </p>
           
           <button 
             onClick={generateWorkout}
             className="generate-button"
           >
-            {workout ? 'Générer un autre workout' : 'Démarrer un workout'}
+            {workout ? t('rhythm_tree.generate_new') : t('rhythm_tree.generate_start')}
           </button>
         </header>
 
@@ -42,7 +44,7 @@ export default function RhythmTreeWorkout() {
               </div>
 
               <p className="progression-text">
-                <strong>Progression :</strong> <span className="progression-highlight">{workout.progression}</span>
+                <strong>{t('rhythm_tree.progression_label')}</strong> <span className="progression-highlight">{workout.progression}</span>
               </p>
             </div>
 
@@ -56,7 +58,8 @@ export default function RhythmTreeWorkout() {
                 return (
                   <div key={blockIndex} className="phrase-card">
                     <div className="measure-badge">
-                      Mesures {startMeasure}-{endMeasure}
+                      {/* Utilisation de l'interpolation pour injecter les variables dynamiques */}
+                      {t('rhythm_tree.measures', { start: startMeasure, end: endMeasure })}
                     </div>
 
                     <div className="rhythm-display-area">
@@ -66,7 +69,7 @@ export default function RhythmTreeWorkout() {
                           <span className="rhythm-name">{rhythmA.name}</span>
                         </div>
                         
-                        <span className="rhythm-separator">puis</span>
+                        <span className="rhythm-separator">{t('rhythm_tree.then')}</span>
                         
                         <div className="rhythm-item">
                           <strong className="rhythm-notation">{rhythmB.notation}</strong>

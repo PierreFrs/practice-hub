@@ -67,6 +67,42 @@ export default {
       "access_denied_title": "Accès Refusé",
       "access_denied_message": "Tu n'as pas les droits d'administrateur nécessaires pour voir cette page.",
       "back_home": "Retour à l'accueil"
+    },
+
+    // Chord Progressions Workout
+    "chord_workout": {
+      "back_button": "← Retour aux exercices",
+      "title": "🎹 Style Progressions",
+      "description": "Choisis un style pour générer une progression d'accords dans une tonalité aléatoire.",
+      "loading_styles": "Chargement des styles...",
+      "error_prefix": "Erreur :",
+      "reference_label": "Référence du style :",
+      "objective_label": "Objectif :",
+      "objective_text": "Joue cette progression dans la tonalité indiquée. Essaie de repérer les degrés sur ton manche plutôt que de penser au nom des accords.",
+      "empty_state": "👆 Sélectionne un style ci-dessus pour commencer."
+    },
+
+    // Rhythm Tree Workout
+    "rhythm_tree": {
+      "back_button": "← Retour aux exercices",
+      "title": "🎸 Rhythm Tree",
+      "description": "Génère un workout d'improvisation sous contrainte rythmique (32 mesures).",
+      "generate_new": "Générer un autre workout",
+      "generate_start": "Démarrer un workout",
+      "progression_label": "Progression :",
+      "measures": "Mesures {{start}}-{{end}}",
+      "then": "puis"
+    },
+
+    "workouts": {
+      "rhythm_tree": {
+        "title": "Rhythm Tree Improv",
+        "description": "Workout d'improvisation sur 32 mesures avec contraintes rythmiques et harmoniques aléatoires."
+      },
+      "chord_progressions": {
+        "title": "Style Progressions",
+        "description": "Génère des progressions d'accords (en degrés) dans une tonalité aléatoire selon ton style préféré."
+      }
     }
   }
 };

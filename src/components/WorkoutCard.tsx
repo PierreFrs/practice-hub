@@ -1,5 +1,6 @@
 import type { WorkoutModule } from '../config/Types';
-import './WorkoutCard.css'; // Import the CSS
+import { useTranslation } from 'react-i18next'; // 1. Import du hook
+import './WorkoutCard.css';
 
 interface Props {
   workout: WorkoutModule;
@@ -7,6 +8,8 @@ interface Props {
 }
 
 export default function WorkoutCard({ workout, onSelect }: Props) {
+  const { t } = useTranslation(); // 2. Initialisation
+
   return (
     <button
       onClick={() => !workout.disabled && onSelect(workout.id)}
@@ -14,8 +17,9 @@ export default function WorkoutCard({ workout, onSelect }: Props) {
       className={`workout-card ${workout.disabled ? 'disabled' : ''}`}
     >
       <span className="card-icon">{workout.icon}</span>
-      <h2 className="card-title">{workout.title}</h2>
-      <p className="card-description">{workout.description}</p>
+      {/* 3. Traduction des propriétés dynamiques */}
+      <h2 className="card-title">{t(workout.title)}</h2>
+      <p className="card-description">{t(workout.description)}</p>
     </button>
   );
 }

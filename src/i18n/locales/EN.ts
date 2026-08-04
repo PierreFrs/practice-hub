@@ -68,6 +68,42 @@ export default {
       "access_denied_title": "Access Denied",
       "access_denied_message": "You do not have the administrator rights required to view this page.",
       "back_home": "Back to home"
+    },
+
+    // Chord Progressions Workout
+    "chord_workout": {
+      "back_button": "← Back to exercises",
+      "title": "🎹 Style Progressions",
+      "description": "Choose a style to generate a chord progression in a random key.",
+      "loading_styles": "Loading styles...",
+      "error_prefix": "Error:",
+      "reference_label": "Style reference:",
+      "objective_label": "Objective:",
+      "objective_text": "Play this progression in the indicated key. Try to map out the scale degrees on your fretboard instead of just thinking about chord names.",
+      "empty_state": "👆 Select a style above to get started."
+    },
+
+    // Rhythm Tree Workout
+    "rhythm_tree": {
+      "back_button": "← Back to exercises",
+      "title": "🎸 Rhythm Tree",
+      "description": "Generate an improvisation workout under rhythmic constraints (32 measures).",
+      "generate_new": "Generate another workout",
+      "generate_start": "Start a workout",
+      "progression_label": "Progression:",
+      "measures": "Measures {{start}}-{{end}}",
+      "then": "then"
+    },
+
+    "workouts": {
+      "rhythm_tree": {
+        "title": "Rhythm Tree Improv",
+        "description": "32-measure improvisation workout with random rhythmic and harmonic constraints."
+      },
+      "chord_progressions": {
+        "title": "Style Progressions",
+        "description": "Generate chord progressions (in scale degrees) in a random key based on your preferred style."
+      }
     }
   }
 };

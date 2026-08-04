@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useChordWorkoutGenerator } from '../hooks/UseChordWorkoutGenerator';
 import './ChordProgressionsWorkout.css';
 
 export default function ChordProgressionsWorkout() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { workout, activeStyle, generateWorkout, dbStyles, loading, errorMsg } = useChordWorkoutGenerator();
 
   return (
@@ -13,17 +15,17 @@ export default function ChordProgressionsWorkout() {
           onClick={() => navigate('/')}
           className="back-button"
         >
-          ← Retour aux exercices
+          {t('chord_workout.back_button')}
         </button>
 
         <header className="workout-header">
-          <h1 className="workout-title">🎹 Style Progressions</h1>
+          <h1 className="workout-title">{t('chord_workout.title')}</h1>
           <p className="workout-description">
-            Choisis un style pour générer une progression d'accords dans une tonalité aléatoire.
+            {t('chord_workout.description')}
           </p>
           
-          {loading && <p style={{ color: '#6b7280', marginTop: '1rem' }}>Chargement des styles...</p>}
-          {errorMsg && <p style={{ color: '#ef4444', marginTop: '1rem' }}>Erreur : {errorMsg}</p>}
+          {loading && <p style={{ color: '#6b7280', marginTop: '1rem' }}>{t('chord_workout.loading_styles')}</p>}
+          {errorMsg && <p style={{ color: '#ef4444', marginTop: '1rem' }}>{t('chord_workout.error_prefix')} {errorMsg}</p>}
 
           {!loading && !errorMsg && (
             <div className="style-selector">
@@ -54,18 +56,18 @@ export default function ChordProgressionsWorkout() {
             <div className="reference-track">
               <span className="reference-icon">🎧</span>
               <div className="reference-info">
-                <span className="reference-label">Référence du style :</span>
+                <span className="reference-label">{t('chord_workout.reference_label')}</span>
                 <span className="reference-name">{workout.reference}</span>
               </div>
             </div>
             
             <div className="workout-instructions">
-              <p><strong>Objectif :</strong> Joue cette progression dans la tonalité indiquée. Essaie de repérer les degrés sur ton manche plutôt que de penser au nom des accords.</p>
+              <p><strong>{t('chord_workout.objective_label')}</strong> {t('chord_workout.objective_text')}</p>
             </div>
           </main>
         ) : (
           <div className="empty-state">
-            👆 Sélectionne un style ci-dessus pour commencer.
+            {t('chord_workout.empty_state')}
           </div>
         )}
       </div>
