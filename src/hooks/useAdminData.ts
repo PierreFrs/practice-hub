@@ -87,8 +87,8 @@ export function useAdminData() {
     }
   };
 
-  return { 
-    styles, progressions, loading, errorMsg, 
-    addStyle, deleteStyle, addProgression, deleteProgression 
+  return {
+    styles, progressions, loading, errorMsg,
+    addStyle, deleteStyle, addProgression, deleteProgression
   };
 }
