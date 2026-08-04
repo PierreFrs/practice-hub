@@ -5,6 +5,7 @@ import ChordProgressionsWorkout from './components/ChordProgressionsWorkout';
 import LandingPage from './components/LandingPage';
 import RhythmTreeWorkout from './components/RhythmTreeWorkout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './i18n/config';
 
 function App() {
   return (

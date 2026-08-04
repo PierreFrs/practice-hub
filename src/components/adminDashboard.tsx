@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAdminData } from '../hooks/UseAdminData';
 import StylesSection from './admin/StylesSection';
 import ProgressionsSection from './admin/ProgressionsSection';
@@ -6,6 +7,7 @@ import './AdminDashboard.css';
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   // On récupère toutes les données et méthodes depuis le Hook personnalisé
   const { 
@@ -17,10 +19,10 @@ export default function AdminDashboard() {
     <div className="admin-container">
       <header className="admin-header">
         <button onClick={() => navigate('/')} className="back-link">
-          ← Retour au site
+          {t('admin.back_link')}
         </button>
-        <h1>🛠️ Back Office</h1>
-        <p>Gère les données de ton application Supabase en direct.</p>
+        <h1>{t('admin.title')}</h1>
+        <p>{t('admin.subtitle')}</p>
       </header>
 
       {errorMsg && (
@@ -30,7 +32,7 @@ export default function AdminDashboard() {
       )}
 
       {loading ? (
-        <div className="loading-state">Chargement des données...</div>
+        <div className="loading-state">{t('admin.loading')}</div>
       ) : (
         <div className="admin-grid">
           <StylesSection 

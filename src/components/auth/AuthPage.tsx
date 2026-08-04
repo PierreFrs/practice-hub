@@ -35,7 +35,11 @@ export default function AuthPage() {
                 setIsLogin(true);
             }
         } catch (err: any) {
-            setErrorMsg(err.message || "Une erreur est survenue.");
+            let errorMessage = err.message || "Une erreur est survenue.";
+            if (errorMessage === "{}" || errorMessage === "[object Object]") {
+                errorMessage = "Erreur du serveur (500). L'envoi de l'email a probablement échoué.";
+            }
+            setErrorMsg(errorMessage);
         } finally {
             setIsSubmitting(false);
         }
