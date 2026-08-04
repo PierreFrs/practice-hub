@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; // Import de i18n
 import { supabase } from '../../config/SupabaseClient';
 import { useAuth } from '../../hooks/UseAuth';
 import './AuthPage.css';
 
 export default function AuthPage() {
+    const { t } = useTranslation(); // Initialisation du hook de traduction
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -31,13 +33,15 @@ export default function AuthPage() {
             } else {
                 const { error } = await supabase.auth.signUp({ email, password });
                 if (error) throw error;
-                setErrorMsg("Vérifie tes emails pour confirmer ton compte ! S'il est confirmé, tu peux te connecter.");
+                // Utilisation de la traduction pour le message de succès
+                setErrorMsg(t('auth.verify_email'));
                 setIsLogin(true);
             }
         } catch (err: any) {
-            let errorMessage = err.message || "Une erreur est survenue.";
+            // Utilisation des traductions pour les messages d'erreur
+            let errorMessage = err.message || t('auth.default_error');
             if (errorMessage === "{}" || errorMessage === "[object Object]") {
-                errorMessage = "Erreur du serveur (500). L'envoi de l'email a probablement échoué.";
+                errorMessage = t('auth.server_error');
             }
             setErrorMsg(errorMessage);
         } finally {
@@ -49,57 +53,58 @@ export default function AuthPage() {
         <div className="auth-container">
             <div className="auth-card">
                 <button onClick={() => navigate('/')} className="auth-back-link">
-                    ← Retour
+                    {t('back')}
                 </button>
 
                 <h1 className="auth-title">
-                    {isLogin ? 'Connexion' : 'Créer un compte'}
+                    {isLogin ? t('auth.login_title') : t('auth.signup_title')}
                 </h1>
 
                 <p className="auth-subtitle">
-                    {isLogin ? 'Ravi de te revoir !' : 'Rejoins Practice Hub pour sauvegarder ta progression.'}
+                    {isLogin ? t('auth.login_subtitle') : t('auth.signup_subtitle')}
                 </p>
 
                 {errorMsg && (
-                    <div className={`auth-banner ${errorMsg.includes('Vérifie tes emails') ? 'success' : 'error'}`}>
+                    // La vérification de la classe 'success' se fait maintenant sur la traduction exacte
+                    <div className={`auth-banner ${errorMsg === t('auth.verify_email') ? 'success' : 'error'}`}>
                         {errorMsg}
                     </div>
                 )}
 
                 <form onSubmit={handleSubmit} className="auth-form">
                     <div className="form-group">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">{t('auth.email_label')}</label>
                         <input
                             id="email"
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            placeholder="ton@email.com"
+                            placeholder={t('auth.email_placeholder')}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Mot de passe</label>
+                        <label htmlFor="password">{t('auth.password_label')}</label>
                         <input
                             id="password"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            placeholder="••••••••"
+                            placeholder={t('auth.password_placeholder')}
                             minLength={6}
                         />
                     </div>
 
                     <button type="submit" className="auth-submit-btn" disabled={isSubmitting}>
-                        {isSubmitting ? 'Chargement...' : (isLogin ? 'Se connecter' : "S'inscrire")}
+                        {isSubmitting ? t('loading') : (isLogin ? t('auth.btn_login') : t('auth.btn_signup'))}
                     </button>
                 </form>
 
                 <div className="auth-toggle">
                     <p>
-                        {isLogin ? "Tu n'as pas de compte ?" : "Tu as déjà un compte ?"}
+                        {isLogin ? t('auth.no_account') : t('auth.has_account')}
                         <button
                             type="button"
                             onClick={() => {
@@ -108,7 +113,7 @@ export default function AuthPage() {
                             }}
                             className="auth-toggle-btn"
                         >
-                            {isLogin ? "S'inscrire" : "Se connecter"}
+                            {isLogin ? t('auth.btn_signup') : t('auth.btn_login')}
                         </button>
                     </p>
                 </div>

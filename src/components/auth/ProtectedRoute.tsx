@@ -1,4 +1,5 @@
 import { Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../hooks/UseAuth';
 
 interface Props {
@@ -7,12 +8,13 @@ interface Props {
 }
 
 export default function ProtectedRoute({ children, requireAdmin = false }: Props) {
+    const { t } = useTranslation();
     const { user, role, loading } = useAuth();
 
     if (loading) {
         return (
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem', color: '#6b7280' }}>
-                Vérification des autorisations...
+                {t('protected.checking')}
             </div>
         );
     }
@@ -24,9 +26,11 @@ export default function ProtectedRoute({ children, requireAdmin = false }: Props
     if (requireAdmin && role !== 'admin') {
         return (
             <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-                <h2 style={{ color: '#ef4444' }}>Accès Refusé</h2>
-                <p>Tu n'as pas les droits d'administrateur nécessaires pour voir cette page.</p>
-                <a href="/" style={{ color: '#4f46e5', textDecoration: 'underline' }}>Retour à l'accueil</a>
+                <h2 style={{ color: '#ef4444' }}>{t('protected.access_denied_title')}</h2>
+                <p>{t('protected.access_denied_message')}</p>
+                <a href="/" style={{ color: '#4f46e5', textDecoration: 'underline' }}>
+                    {t('protected.back_home')}
+                </a>
             </div>
         );
     }

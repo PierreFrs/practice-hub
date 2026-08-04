@@ -12,13 +12,23 @@ export default {
     },
     
     // Auth Page
+    // Auth Page
     "auth": {
       "login_title": "Login",
       "signup_title": "Create an account",
+      "login_subtitle": "Welcome back!",
+      "signup_subtitle": "Join Practice Hub to save your progress.",
       "email_label": "Email",
+      "email_placeholder": "your@email.com",
       "password_label": "Password",
+      "password_placeholder": "••••••••",
       "btn_login": "Sign in",
-      "btn_signup": "Sign up"
+      "btn_signup": "Sign up",
+      "no_account": "Don't have an account?",
+      "has_account": "Already have an account?",
+      "verify_email": "Check your emails to confirm your account! If it's confirmed, you can log in.",
+      "default_error": "An error occurred.",
+      "server_error": "Server error (500). Email delivery probably failed."
     },
 
     // Settings
@@ -50,6 +60,14 @@ export default {
         "unknown_style": "Unknown",
         "empty": "No progression found."
       }
+    },
+
+    // Protected Route
+    "protected": {
+      "checking": "Checking permissions...",
+      "access_denied_title": "Access Denied",
+      "access_denied_message": "You do not have the administrator rights required to view this page.",
+      "back_home": "Back to home"
     }
   }
 };
